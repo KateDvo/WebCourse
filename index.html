@@ -1,0 +1,43 @@
+<!-- console.dir(document) gives all properties of the DOM -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selecting</title>
+    </head>
+    <body>
+        <ul>
+            <li>document.getElementById(id")</li>
+            <ul>
+                <li>console.dir(varname) print all properties of object</li>
+            </ul>
+            <li>const p = document.getElementByTagName("p")</li>
+            <ul>
+                <li>return list with all elements with that ('p') tag </li>
+                <li>for converting it to array use spread operator( ...p )</li>
+            </ul>
+            <li>document.getElementByClassName("class-name")</li>
+            <ul>
+                <li>return all elements as collection </li>
+                <li>for searching nested elements with class name:
+                    <p>create variable that contains parent element</p>
+                    <p>use 'varname'.getElementByClassName('class-name')</p>
+                 </li>
+                 <li>as a result you have only children elements in collection</li>
+            </ul>
+            <li>querySelector('li') / querySelectorAll('li')
+                <ul>
+                <li> A newer all-in-one method to select a SINGLE ELEMENT</li>
+                <li>querySelector('li') return only first item </li>
+                <li>querySelectorAll('li') return NodeList with all elements</li>
+                <li>for searching by id need to add #, like in css</li>
+                <li>for searching nested elements provide hierarchy:
+                    document.querySelector('body ul li.special')
+                </li>
+
+                </ul>
+
+            </li>
+        </ul>
+        
+    </body>
+</html>
