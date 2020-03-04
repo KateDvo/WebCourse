@@ -3,8 +3,50 @@
 <html>
     <head>
         <title>Selecting</title>
+        <style>
+
+            img{
+                height:50%;
+                width:50%;
+            }
+            .special{
+                border: 2px solid cyan;
+                font-size:large;
+
+            }
+        </style>
     </head>
     <body>
+        <h1>My Webpage</h1>
+        <p id = "main">Lorem, ipsum dolor
+             sit amet consectetur adipisicing elit.
+              Accusamus praesentium voluptatem doloribus!
+               Nostrum natus rem dolorum quasi? Autem, neque vel
+               
+               <b style = "display: none;">deleniti laborum aut</b> doloremque nulla vero, quidem esse, excepturi officiis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ducimus ex voluptatem dolorum in dicta deserunt, ipsam quisquam dolore molestiae numquam at quae labore eum error! At maiores cumque quia.</p>
+
+        <form action="">
+            <input type="text" placeholder="name">
+            <input type="password" placeholder="password">
+            <input type="checkbox">
+            <input type="range" min="100" max = "500">
+            <input type="submit">
+        </form>
+
+        <ul>
+            <li class = "special">First thing</li>
+            <li>Second Thing</li>
+            <li class = "special">Third thing</li>
+        </ul>
+        <img src="https://thenypost.files.wordpress.com/2014/09/bear1.jpg?quality=90&strip=all&w=618&h=410&crop=1" alt="bear">
+
+        <ul>
+            <li>more </li>
+            <li>items</li>
+            <li>in unordered list</li>
+        </ul>
+        <a href="http://somelink.com"> This is link</a>
         <ul>
             <li>document.getElementById(id")</li>
             <ul>
@@ -38,6 +80,60 @@
 
             </li>
         </ul>
-        
+
+        <script>
+            const h1 = document.querySelector('h1');
+            console.log(h1.innerText);
+            const ul = document.querySelector('ul');
+            console.log(ul.innerText);//print all text that nested in ul
+            // ul.innerText = "New text will replace all previous cotent" 
+            const p = document.querySelector('p');
+
+            // return text with format like in the editor excludind  tags including styled display:none element
+            console.log(p.textContent)  
+
+            //innerHTML
+            const form = document.querySelector('form');
+            console.log(form.innerHTML); //print content of form
+            // form.innerHTML = '<b>I am a bold tag</b>' //replace content 
+            //inner html replace tags 
+            //inner text add text as is
+            const inputs = document.querySelectorAll('input')
+            // inputs[0].value //give value of the first input tag
+            // inputs[1].value //give value of password input fied
+            // inputs[2].value  // give on , no matter if checkbox checked or not
+            console.log(inputs)//give accsess to NodeList with objects
+            inputs[2].checked //return true or false 
+            inputs[3].value //give actual value of range input
+            inputs[3].step = 10 //allows steps only by 10 units
+
+            const a = document.querySelector('a');
+            a.href = "http://www.google.com" //accsess to href attribute and replace it's value
+
+            /*Getting and Setting attributes*/
+            const range = document.querySelector('input[type="range"]');
+            range.getAttribute('max');
+            range.getAttribute('min');
+            range.getAttribute('type'); //range
+            range.getAttribute('dont existing') //null
+            range.setAttribute('max', '1000');
+            // range.setAttribute('type', 'radio'); //replace with radio button
+
+            /*Finding parents/ sibling/ children elements*/
+            const firstLi = document.querySelector('li');
+            console.dir(firstLi);
+            firstLi.parentElement //give ul
+            firstLi.parentElement.parentElement //give body
+            firstLi.parentElement.parentElement.parentElement //give html
+            
+            const ul2 = document.querySelector('ul');
+            ul2.children //give all li childrens element in HTMLCollection
+            ul2[0].innerText;
+
+            const secondLi = firstLi.nextElementSibling //give next sibling element
+            secondLi.previousElementSibling
+
+
+        </script>
     </body>
 </html>
